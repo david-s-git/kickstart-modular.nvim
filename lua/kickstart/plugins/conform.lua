@@ -33,12 +33,23 @@ return {
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
+        -- php = { 'php-cs-fixer' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
         -- javascript = { "prettierd", "prettier", stop_after_first = true },
       },
+      -- formatters = {
+      --   ['php-cs-fixer'] = {
+      --     command = 'php-cs-fixer',
+      --     args = {
+      --       'fix',
+      --       '$FILENAME',
+      --     },
+      --     stdin = false,
+      --   },
+      -- },
     },
   },
 }
