@@ -225,7 +225,15 @@ return {
         --     ['language_server.diagnostic_outsource'] = false,
         --   },
         -- },
-        intelephense = {},
+        intelephense = {
+          settings = {
+            intelephense = {
+              environment = {
+                phpVersion = '8.0',
+              },
+            },
+          },
+        },
 
         lua_ls = {
           -- cmd = { ... },
