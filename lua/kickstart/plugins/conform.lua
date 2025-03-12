@@ -7,7 +7,7 @@ return {
       {
         '<leader>f',
         function()
-          require('conform').format { async = true, lsp_format = 'fallback' }
+          require('conform').format({ async = true, lsp_format = 'fallback' })
         end,
         mode = '',
         desc = '[F]ormat buffer',
@@ -40,16 +40,20 @@ return {
         -- You can use 'stop_after_first' to run the first available formatter from the list
         -- javascript = { "prettierd", "prettier", stop_after_first = true },
       },
-      -- formatters = {
-      --   ['php-cs-fixer'] = {
-      --     command = 'php-cs-fixer',
-      --     args = {
-      --       'fix',
-      --       '$FILENAME',
-      --     },
-      --     stdin = false,
-      --   },
-      -- },
+      formatters = {
+        -- https://github.com/JohnnyMorganz/StyLua?tab=readme-ov-file#options
+        ['stylua'] = {
+          prepend_args = { '--call-parentheses', 'Always' },
+        },
+        --   ['php-cs-fixer'] = {
+        --     command = 'php-cs-fixer',
+        --     args = {
+        --       'fix',
+        --       '$FILENAME',
+        --     },
+        --     stdin = false,
+        --   },
+      },
     },
   },
 }

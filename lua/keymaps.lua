@@ -45,4 +45,22 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- >>> Some more >>>
+vim.keymap.set('i', '<CR>', function()
+  local closing = { ['{'] = '}', ['['] = ']', ['('] = ')' }
+
+  local line = vim.api.nvim_get_current_line()
+  local possible_bracket_line = line:match('[{%[%(]%s*$')
+  local col = vim.api.nvim_win_get_cursor(0)[2]
+
+  if col == #line and possible_bracket_line then
+    return '<CR>' .. closing[possible_bracket_line:sub(1, 1)] .. '<Esc>O'
+  elseif line:match('[{%[%(][}%]%)]') then
+    return '<CR><Esc>O'
+  else
+    return '<CR>'
+  end
+end, { expr = true, noremap = true, desc = 'Add closing bracket only if at end of line' })
+-- <<< Some more <<<
+
 -- vim: ts=2 sts=2 sw=2 et
