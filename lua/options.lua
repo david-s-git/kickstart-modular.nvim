@@ -67,7 +67,7 @@ vim.opt.scrolloff = 10
 vim.opt.confirm = true
 
 -- >>> Some more >>>
-vim.opt.relativenumber = true
+-- vim.opt.relativenumber = true
 
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4

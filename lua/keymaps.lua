@@ -61,6 +61,9 @@ vim.keymap.set('i', '<CR>', function()
     return '<CR>'
   end
 end, { expr = true, noremap = true, desc = 'Add closing bracket only if at end of line' })
+
+vim.keymap.set('v', '>', '>gv', { desc = 'Keep visual selection active after indenting' })
+vim.keymap.set('v', '<', '<gv', { desc = 'Keep visual selection active after unindenting' })
 -- <<< Some more <<<
 
 -- vim: ts=2 sts=2 sw=2 et
